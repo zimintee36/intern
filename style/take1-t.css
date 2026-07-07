@@ -1,0 +1,54 @@
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 40px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #contactList {
+            list-style: none;
+            padding: 0;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        #contactList li {
+            background: white;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,.1);
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            border: none;
+            background: crimson;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: darkred;
+        }
+
+        .back-btn {
+            display: block;
+            width: 120px;
+            margin: 30px auto;
+            text-align: center;
+            text-decoration: none;
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .back-btn:hover {
+            background: #0056b3;
+        }

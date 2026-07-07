@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Messages</title>
+    <link rel="stylesheet" href="../style/take1-t.css" />
+
+    <style>
+
+    </style>
+
+</head>
+<body>
+
+    <h1>Contact Messages</h1>
+
+    <ul id="contactList"></ul>
+
+    <a href="test1.html" class="back-btn">Back</a>
+
+<script>
+
+const list = document.getElementById("contactList");
+
+// 读取所有留言
+function loadContacts() {
+
+    fetch("http://localhost:5000/contact")
+        .then(res => res.json())
+        .then(data => {
+
+            list.innerHTML = "";
+
+            if (data.length === 0) {
+                list.innerHTML = "<li>No messages found.</li>";
+                return;
+            }
+
+            data.forEach(c => {
+
+                const li = document.createElement("li");
+
+                li.innerHTML = `
+                    <strong>Name:</strong> ${c.name}<br><br>
+                    <strong>Email:</strong> ${c.email}<br><br>
+                    <strong>Message:</strong><br>${c.message}<br><br>
+                    <button onclick="deleteContact(${c.id})">Delete</button>`;
+                list.appendChild(li);}
+            );
+
+        })
+        .catch(err => console.error(err));
+
+}
+
+// 删除留言
+function deleteContact(id) {
+
+    if (!confirm("Delete this message?")) return;
+
+    fetch(`http://localhost:5000/contact/${id}`, {
+        method: "DELETE"
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert(data.message);
+        loadContacts();
+    })
+    .catch(err => console.log(err));
+}
+
+// 页面开启时自动读取
+loadContacts();
+
+</script>
+
+</body>
+</html>

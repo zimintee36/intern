@@ -10,8 +10,8 @@ CORS(app)
 DB_CONFIG = {
     "host": "localhost",
     "user": "root",
-    "password": "",  # Change to your MySQL password
-    "database": "staticprofiledb",        # Change to your database name
+    "password": "", 
+    "database": "staticprofiledb",  
     "port": 3306
 }
 
@@ -33,7 +33,7 @@ def get_contacts():
 
     try:
         cursor = conn.cursor(dictionary=True)
-        cursor.execute("SELECT name, email, message FROM Contact")
+        cursor.execute("""SELECT id, name, email, message FROM Contact ORDER BY id DESC """)
         rows = cursor.fetchall()
         return jsonify(rows)
     except Error as e:
@@ -66,6 +66,40 @@ def add_contact():
     finally:
         cursor.close()
         conn.close()
+
+@app.route("/contact/<int:id>", methods=["DELETE"])
+def delete_contact(id):
+
+    conn = get_db_connection()
+
+    if conn is None:
+        return jsonify({"error": "Database connection failed"}), 500
+
+    try:
+        cursor = conn.cursor()
+
+        sql = "DELETE FROM Contact WHERE id = %s"
+
+        cursor.execute(sql, (id,))
+
+        conn.commit()
+
+        if cursor.rowcount == 0:
+            return jsonify({
+                "error": "Contact not found"
+            }), 404
+
+        return jsonify({
+            "message": "Contact deleted successfully"
+        })
+
+    except Error as e:
+        return jsonify({"error": str(e)}), 500
+
+    finally:
+        cursor.close()
+        conn.close()
+
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)
