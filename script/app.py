@@ -77,21 +77,13 @@ def delete_contact(id):
 
     try:
         cursor = conn.cursor()
-
         sql = "DELETE FROM Contact WHERE id = %s"
-
         cursor.execute(sql, (id,))
-
         conn.commit()
 
         if cursor.rowcount == 0:
-            return jsonify({
-                "error": "Contact not found"
-            }), 404
-
-        return jsonify({
-            "message": "Contact deleted successfully"
-        })
+            return jsonify({"error": "Contact not found"}), 404
+        return jsonify({"message": "Contact deleted successfully"})
 
     except Error as e:
         return jsonify({"error": str(e)}), 500
