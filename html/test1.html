@@ -1,10 +1,142 @@
-<html>  
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="../style/1t.css">
-    <title>Personal Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Profile</title>
+    <link rel="stylesheet" href="../style/t.css" />
 </head>
 <body>
-    <h1>Welcome to the Personal Page</h1>
-    <p><a href="test2.html">test2page</a></p>
+    <div class="page-shell">
+        <header class="hero">
+            <nav class="top-nav">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="hero-content">
+                <div>
+                    <p class="eyebrow">Front-end learner</p>
+                    <h1 id="profile-name">Alex Chen</h1>
+                    <p id="profile-role" class="hero-subtitle">Building responsive web experiences with HTML, CSS, and JavaScript.</p>
+                    <p id="profile-summary" class="hero-copy">I enjoy turning ideas into polished interfaces and practicing modern web development step by step.</p>
+                    <div class="hero-actions">
+                        <a class="button primary" href="#contact">Contact Me</a>
+                        <a class="button secondary" href="#projects">View Projects</a>
+                    </div>
+                </div>
+                <aside class="info-card">
+                    <h2>Quick Info</h2>
+                    <ul>
+                        <li><strong>Location:</strong> <span id="profile-location">Shenzhen</span></li>
+                        <li><strong>Focus:</strong> Web UI and interactive pages</li>
+                        <li><strong>Status:</strong> <span id="profile-status">Learning and practicing</span></li>
+                    </ul>
+                </aside>
+            </div>
+        </header>
+
+        <main>
+            <section id="about" class="card">
+                <h2>About Me</h2>
+                <article class="about-grid">
+                    <p>I am a self-driven learner exploring semantic HTML, modern CSS layouts, and JavaScript interactivity. This profile page demonstrates how to structure content clearly and make it feel welcoming on any device.</p>
+                    <div class="facts">
+                        <div>
+                            <span>2+</span>
+                            <p>Years of self-study</p>
+                        </div>
+                        <div>
+                            <span>3</span>
+                            <p>Core web technologies</p>
+                        </div>
+                        <div>
+                            <span>100%</span>
+                            <p>Curiosity-driven practice</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section id="skills" class="card">
+                <h2>Skills</h2>
+                <div id="skills-grid" class="skills-grid"></div>
+            </section>
+
+            <section id="projects" class="card">
+                <h2>Projects</h2>
+                <div id="projects-grid" class="projects-grid"></div>
+            </section>
+
+            <section id="contact" class="card contact-grid">
+                <div>
+                    <h2>Contact</h2>
+                    <p>Feel free to leave a message if you'd like to discuss web design, front-end practice, or collaboration ideas.</p>
+                    <ul class="contact-list">
+                        <li>Email: alex@example.com</li>
+                        <li>GitHub: github.com/alexdev</li>
+                        <li>City: Shanghai</li>
+                    </ul>
+                </div>
+            <form id="contactForm" class="contact-form">
+                <input type="text" name="name" placeholder="Name" required><br>
+                <input type="email" name="email" placeholder="Email" required><br>
+                <textarea name="message" placeholder="Message" required></textarea><br>
+                <button type="submit">Submit</button>
+            </form>
+  
+
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>© <span id="year"></span> Alex Chen. Built with HTML5, CSS3, and JavaScript.</p>
+        </footer>
+    </div>
+
+        <script>
+        const form = document.getElementById("contactForm");
+        const list = document.getElementById("contactList");
+
+
+
+
+        // Submit form
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            fetch("http://localhost:5000/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then(res => {
+                alert(res.message || res.error);
+                loadContacts();
+                form.reset();
+            })
+            .catch(err => console.error(err));
+        });
+
+        // Load contacts
+        function loadContacts() {
+            fetch("http://localhost:5000/contact")
+                .then(res => res.json())
+                .then(data => {
+                    list.innerHTML = "";
+                    data.forEach(c => {
+                        const li = document.createElement("li");
+                        li.textContent = `${c.name} (${c.email}): ${c.message}`;
+                        list.appendChild(li);
+                    });
+                });
+        }
+
+        loadContacts();
+    </script>
 </body>
 </html
