@@ -24,7 +24,23 @@ def get_db_connection():
         print(f"Database connection failed: {e}")
         return None
 
+# Get all contacts
+@app.route("/contact", methods=["GET"])
+def get_contacts():
+    conn = get_db_connection()
+    if conn is None:
+        return jsonify({"error": "Database connection failed"}), 500
 
+    try:
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT name, email, message FROM Contact")
+        rows = cursor.fetchall()
+        return jsonify(rows)
+    except Error as e:
+        return jsonify({"error": str(e)}), 500
+    finally:
+        cursor.close()
+        conn.close()
 
 # Add a new contact
 @app.route("/contact", methods=["POST"])

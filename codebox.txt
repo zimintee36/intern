@@ -16,3 +16,17 @@ def get_contacts():
     finally:
         cursor.close()
         conn.close()
+
+                // Load contacts
+        function loadContacts() {
+            fetch("http://localhost:5000/contact")
+                .then(res => res.json())
+                .then(data => {
+                    list.innerHTML = "";
+                    data.forEach(c => {
+                        const li = document.createElement("li");
+                        li.textContent = `${c.name} (${c.email}): ${c.message}`;
+                        list.appendChild(li);
+                    });
+                });
+        }
