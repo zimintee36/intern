@@ -226,6 +226,10 @@ textarea {
     color: var(--muted-color);
 }
 
+.link{
+    color:white;
+}
+
 @media (max-width: 768px) {
     .page-shell {
         padding: 16px;
