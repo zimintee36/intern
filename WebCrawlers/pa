@@ -38,8 +38,10 @@ soup = BeautifulSoup(response.text,"html.parser")
 
 
 save_dir = "DataExtractionByWebCrawlers"
+course_dir = os.path.join(save_dir,"course")
 image_dir = os.path.join(save_dir,"images")
 video_dir = os.path.join(save_dir,"videos")
+
 os.makedirs(image_dir,exist_ok=True)
 os.makedirs(video_dir,exist_ok=True)
 
@@ -84,7 +86,9 @@ def download_file(
 # 1. 抓取文字
 
 
-text_file = os.path.join(save_dir,"course.txt")
+course_dir = os.path.join(save_dir,"course")
+os.makedirs(course_dir,exist_ok=True)
+text_file  = os.path.join(course_dir,"course.txt")
 seen = set()
 
 with open(text_file,"w",encoding="utf-8") as f:
