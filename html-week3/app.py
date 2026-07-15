@@ -44,14 +44,14 @@ def add_register():
     cursor = db.cursor()
 
     sql = """
-    INSERT INTO register(student_id, studentname, courses)
+    INSERT INTO register(student_id, studentname, coursename)
     VALUES(%s,%s,%s)
     """
 
     cursor.execute(sql, (
         data["student_id"],
         data["studentname"],
-        data["courses"]
+        data["coursename"]
     ))
 
     db.commit()
@@ -76,13 +76,13 @@ def update_register(student_id):
     UPDATE register
     SET student_id=%s,
         studentname=%s,
-        courses=%s
+        coursename=%s
     WHERE student_id=%s
     """
     cursor.execute(sql,(
         data["student_id"],
         data["studentname"],
-        data["courses"],
+        data["coursename"],
         student_id
     ))
     db.commit()
@@ -110,6 +110,17 @@ def delete_register(student_id):
     return jsonify({
         "message":"Deleted"
     })
+
+
+
+
+
+
+
+
+
+
+
 
 
 if __name__ == "__main__":
