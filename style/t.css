@@ -65,7 +65,7 @@ body {
     background: rgba(110, 231, 249, 0.24);
 }
 
-.hero-content {
+.hero-content,.hero.register {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -73,7 +73,7 @@ body {
     flex-wrap: wrap;
 }
 
-.hero-content > div {
+.hero-content, .hero.register > div {
     flex: 2 1 480px;
 }
 
@@ -174,18 +174,18 @@ h2 {
     padding: 16px;
 }
 
-.contact-grid {
+.contact-grid, .register-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
 }
 
-.contact-list {
+.contact-list, .register-list {
     padding-left: 18px;
-    line-height: 1.8;
+    line-height: 1.8;   
 }
 
-.contact-form {
+.contact-form,.register-form {
     display: flex;
     flex-direction: column;
     gap: 12px;

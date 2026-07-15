@@ -9,7 +9,7 @@ from urllib.parse import urljoin
 # 网页网址
 
 
-url = "https://www.newera.edu.my/course_details.php?acalevel=2&course=49"
+url = "https://www.newera.edu.my/onlinereg/"
 headers = {"User-Agent": "Mozilla/5.0"}
 
 

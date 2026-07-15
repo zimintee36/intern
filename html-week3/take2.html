@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Student Register</title>
+<link rel="stylesheet" href="../style/take2-t.css" />
+
+</head>
+
+<body>
+
+
+<h2>Student Registration</h2>
+<ul id="RegisterList"></ul>
+<form id="RegisterForm">
+<input 
+type="text"
+name="student_id"
+placeholder="Student ID"
+required>
+
+<br>
+
+<input
+type="text"
+name="studentname"
+placeholder="Student Name"
+required>
+
+<br>
+<textarea
+name="courses"
+placeholder="Courses"
+required></textarea>
+<br>
+
+<button type="submit">Submit</button>
+</form>
+<script>
+
+const list =
+document.getElementById("RegisterList");
+
+const form =
+document.getElementById("RegisterForm");
+
+const API =
+"http://localhost:5000/register";
+
+// ======================
+// READ
+// ======================
+
+function loadRegister(){
+
+fetch(API)
+.then(res=>res.json())
+.then(data=>{
+list.innerHTML="";
+data.forEach(c=>{
+let li =
+document.createElement("li");
+
+li.innerHTML = `
+<b>Student ID:</b>
+${c.student_id}
+<br>
+
+<b>Name:</b>
+${c.studentname}
+<br>
+
+<b>Courses:</b>
+${c.courses}
+<br>
+
+<button onclick="editRegister('${c.student_id}')">Edit</button>
+<button onclick="deleteRegister('${c.student_id}')">Delete</button><hr>`;
+list.appendChild(li);
+
+});
+});
+}
+
+// ======================
+// CREATE
+// ======================
+
+form.addEventListener(
+"submit",
+function(e){
+
+e.preventDefault();
+
+let formData =
+new FormData(form);
+
+let data =
+Object.fromEntries(formData.entries());
+
+fetch(API,{
+method:"POST",
+headers:{
+"Content-Type":
+"application/json"
+},
+
+body:
+JSON.stringify(data)
+})
+
+.then(res=>res.json())
+.then(data=>{
+alert(data.message);
+form.reset();
+loadRegister();
+
+});
+});
+
+// ======================
+// UPDATE
+// ======================
+
+function editRegister(student_id) {
+
+fetch(API)
+.then(res => res.json())
+.then(data => {
+
+let student = data.find(c => c.student_id == student_id);
+
+if(!student) return;
+
+let li = document.querySelector(
+`button[onclick="editRegister('${student_id}')"]`
+).parentElement;
+
+
+li.innerHTML = `
+<b>Student ID:</b><br>
+<input id="editID" value="${student.student_id}">
+<br>
+
+<b>Name:</b><br>
+<input id="editName" value="${student.studentname}">
+<br>
+
+<b>Courses:</b><br>
+<textarea id="editCourses">${student.courses}</textarea>
+<br>
+
+<button onclick="saveRegister('${student_id}')">
+Save
+</button>
+
+<button onclick="loadRegister()">
+Cancel
+</button>
+
+<hr>
+`;
+
+});
+
+}
+
+
+function saveRegister(oldID){
+
+let newID =
+document.getElementById("editID").value;
+
+let name =
+document.getElementById("editName").value;
+
+let courses =
+document.getElementById("editCourses").value;
+
+
+fetch(API + "/" + oldID,{
+method:"PUT",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+student_id:newID,
+studentname:name,
+courses:courses
+})
+})
+
+.then(res=>res.json())
+.then(data=>{
+alert(data.message);
+loadRegister();
+});
+
+}
+// ======================
+// DELETE
+// ======================
+
+function deleteRegister(student_id){
+if(!confirm("Delete this register?"))
+return;
+
+fetch(
+API+"/"+student_id,
+{method:"DELETE"})
+.then(res=>res.json())
+.then(data=>{
+alert(data.message);
+loadRegister();
+});}
+
+// 页面打开自动读取
+
+loadRegister();
+
+</script>
+
+</body>
+</html>
