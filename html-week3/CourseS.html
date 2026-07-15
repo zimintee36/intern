@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Student Register</title>
+<link rel="stylesheet" href="../style/CourseS-t.css" />
+
+</head>
+
+<body>
+<h2>CourseList</h2>
+<ul id="CourseList"></ul>
+<h2>Student List</h2>
+<ul id="StudentList"></ul>
+
+<script>
+const CourseList = document.getElementById("CourseList");
+const StudentList = document.getElementById("StudentList");
+
+
+const COURSE_API =
+"http://localhost:5000/course";
+
+const REGISTER_API =
+"http://localhost:5000/register";
+
+// ======================
+// READ
+// ======================
+function loadCourses(){
+
+fetch(COURSE_API)
+.then(res=>res.json())
+.then(data=>{
+CourseList.innerHTML="";
+data.forEach(c=>{
+let li=document.createElement("li");
+li.innerHTML=`
+
+<b>Course ID:</b>
+${c.course_id}
+
+<br>
+<b>Course Name:</b>
+${c.coursename}
+
+<br>
+<b>MQA:</b>
+${c.mqa_approval}
+
+<br>
+<b>Intake:</b>
+${c.intakes}
+
+<br>
+<b>Duration:</b>
+${c.duration}
+<br>
+
+<button onclick="viewStudents('${c.coursename}')">View Students</button><hr>`;
+CourseList.appendChild(li);
+});
+});
+}
+
+function viewStudents(coursename){
+
+    currentCourse = coursename;
+
+    fetch(REGISTER_API)
+    .then(res => res.json())
+    .then(data => {
+        StudentList.innerHTML = "";
+        let students = data.filter(
+            s => 
+            s.coursename.trim().toLowerCase()
+            ===
+            coursename.trim().toLowerCase()
+        );
+
+
+        if(students.length == 0){
+            StudentList.innerHTML =
+            "No student registered";
+            return;
+        }
+
+        students.forEach(s => {
+            let li = document.createElement("li");
+            li.innerHTML = `
+                Student ID:
+                ${s.student_id}
+                <br>
+                Name:
+                ${s.studentname}
+                <br>
+                Course:
+                ${s.coursename}
+                <br><br>
+                <button onclick="editRegister('${s.student_id}')">Edit</button>
+                <button onclick="deleteRegister('${s.student_id}')">Delete</button>
+                <hr>
+            `;
+            StudentList.appendChild(li);
+        });
+
+    });
+}
+
+
+
+function editRegister(student_id) {
+
+fetch(REGISTER_API)
+.then(res => res.json())
+.then(data => {
+
+let student = data.find(c => c.student_id == student_id);
+
+if(!student) return;
+
+let li = document.querySelector(
+`button[onclick="editRegister('${student_id}')"]`
+).parentElement;
+
+
+li.innerHTML = `
+<b>Student ID:</b><br>
+<input id="editID" value="${student.student_id}">
+<br>
+
+<b>Name:</b><br>
+<input id="editName" value="${student.studentname}">
+<br>
+
+<b>Courses:</b><br>
+<textarea id="editCourses">${student.coursename}</textarea>
+<br>
+
+<button onclick="saveRegister('${student_id}')">
+Save
+</button>
+
+<button onclick="viewStudents(currentCourse);">
+Cancel
+</button>
+
+<hr>
+`;
+});
+}
+
+
+function saveRegister(oldID){
+
+let newID =
+document.getElementById("editID").value;
+
+let name =
+document.getElementById("editName").value;
+
+let courses =
+document.getElementById("editCourses").value;
+
+
+fetch(REGISTER_API + "/" + oldID,{
+method:"PUT",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+student_id:newID,
+studentname:name,
+coursename:courses
+})
+})
+
+.then(res=>res.json())
+.then(data=>{
+alert(data.message);
+viewStudents(currentCourse);
+});
+}
+
+// ======================
+// DELETE
+// ======================
+
+function deleteRegister(student_id){
+    if(!confirm("Delete this register?"))
+        return;
+
+    fetch(REGISTER_API + "/" + student_id,{
+        method:"DELETE"
+    })
+    .then(res=>{
+        if(!res.ok){
+            throw new Error("Delete failed");
+        }
+        return res.json();
+    })
+    .then(data=>{
+        alert(data.message);
+        viewStudents(currentCourse);
+    })
+    .catch(err=>{
+        alert(err.message);
+    });
+}
+
+loadCourses();
+
+</script>
+
+</body>
+</html>

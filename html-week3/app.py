@@ -111,9 +111,41 @@ def delete_register(student_id):
         "message":"Deleted"
     })
 
+# 获取课程列表
+@app.route("/course", methods=["GET"])
+def get_course():
 
+    db = get_db()
+    cursor = db.cursor(dictionary=True)
 
+    cursor.execute("SELECT * FROM course")
 
+    data = cursor.fetchall()
+
+    cursor.close()
+    db.close()
+
+    return jsonify(data)
+
+# 课程学生查询
+@app.route("/course/<coursename>/students", methods=["GET"])
+def get_course_students(coursename):
+
+    db = get_db()
+    cursor = db.cursor(dictionary=True)
+
+    cursor.execute("""
+        SELECT student_id, studentname, coursename
+        FROM register
+        WHERE coursename=%s
+    """, (coursename,))
+
+    data = cursor.fetchall()
+
+    cursor.close()
+    db.close()
+
+    return jsonify(data)
 
 
 

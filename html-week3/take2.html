@@ -45,7 +45,7 @@ document.getElementById("RegisterList");
 const form =
 document.getElementById("RegisterForm");
 
-const API =
+const REGISTER_API =
 "http://localhost:5000/register";
 
 // ======================
@@ -54,7 +54,7 @@ const API =
 
 function loadRegister(){
 
-fetch(API)
+fetch(REGISTER_API)
 .then(res=>res.json())
 .then(data=>{
 list.innerHTML="";
@@ -99,7 +99,7 @@ new FormData(form);
 let data =
 Object.fromEntries(formData.entries());
 
-fetch(API,{
+fetch(REGISTER_API,{
 method:"POST",
 headers:{
 "Content-Type":
@@ -179,7 +179,7 @@ let courses =
 document.getElementById("editCourses").value;
 
 
-fetch(API + "/" + oldID,{
+fetch(REGISTER_API + "/" + oldID,{
 method:"PUT",
 headers:{
 "Content-Type":"application/json"
@@ -207,7 +207,7 @@ if(!confirm("Delete this register?"))
 return;
 
 fetch(
-API+"/"+student_id,
+REGISTER_API+"/"+student_id,
 {method:"DELETE"})
 .then(res=>res.json())
 .then(data=>{
