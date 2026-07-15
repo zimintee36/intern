@@ -80,7 +80,17 @@ ${c.coursename}
 list.appendChild(li);
 
 });
+})
+
+.catch(error=>{
+
+    alert(
+    "❌ Load Failed: "
+    + error.message
+    );
+
 });
+
 }
 
 // ======================
@@ -99,6 +109,16 @@ new FormData(form);
 let data =
 Object.fromEntries(formData.entries());
 
+
+if(
+data.student_id=="" ||
+data.studentname=="" ||
+data.coursename==""
+){
+alert("❌ Please fill all fields");
+return;
+}
+
 fetch(REGISTER_API,{
 method:"POST",
 headers:{
@@ -112,11 +132,24 @@ JSON.stringify(data)
 
 .then(res=>res.json())
 .then(data=>{
-alert(data.message);
+alert("✅ Register Success: " + data.message);
 form.reset();
 loadRegister();
 
+})
+
+.catch(error=>{
+
+
+alert(
+"❌ Register Failed: "
++ error.message
+);
+
+
 });
+
+
 });
 
 // ======================
@@ -126,12 +159,21 @@ loadRegister();
 function editRegister(student_id) {
 
 fetch(REGISTER_API)
-.then(res => res.json())
-.then(data => {
+.then(res=>{
+if(!res.ok){
+throw new Error("Cannot get data");
+}
+return res.json();})
+.then(data=>{
+
 
 let student = data.find(c => c.student_id == student_id);
 
-if(!student) return;
+if(!student){
+alert("❌ Student not found");
+return;
+}
+
 
 let li = document.querySelector(
 `button[onclick="editRegister('${student_id}')"]`
@@ -158,12 +200,13 @@ Save
 <button onclick="loadRegister()">
 Cancel
 </button>
-
 <hr>
 `;
+})
 
+.catch(error=>{
+alert("❌ Edit Failed: "+error.message);
 });
-
 }
 
 
@@ -178,6 +221,14 @@ document.getElementById("editName").value;
 let courses =
 document.getElementById("editCourses").value;
 
+if(
+newID=="" ||
+name=="" ||
+courses==""
+){
+alert("❌ Cannot leave empty");
+return;
+}
 
 fetch(REGISTER_API + "/" + oldID,{
 method:"PUT",
@@ -191,10 +242,19 @@ coursename:courses
 })
 })
 
-.then(res=>res.json())
+.then(res=>{
+if(!res.ok){
+throw new Error("Update failed");
+}
+return res.json();
+})
 .then(data=>{
-alert(data.message);
+alert("✅ Update Success: "+data.message);
 loadRegister();
+})
+
+.catch(error=>{
+alert("❌ Update Failed: "+error.message);
 });
 
 }
@@ -203,17 +263,28 @@ loadRegister();
 // ======================
 
 function deleteRegister(student_id){
-if(!confirm("Delete this register?"))
+if(!confirm("Are you sure you want to delete this student?"))
 return;
 
 fetch(
 REGISTER_API+"/"+student_id,
 {method:"DELETE"})
-.then(res=>res.json())
+.then(res=>{
+if(!res.ok){
+throw new Error("Delete failed");
+}
+return res.json();
+})
+
 .then(data=>{
-alert(data.message);
+alert("✅ Delete Success: " + data.message);
 loadRegister();
-});}
+})
+
+.catch(error=>{
+alert("❌ Delete Failed: "+error.message);
+});
+}
 
 // 页面打开自动读取
 
