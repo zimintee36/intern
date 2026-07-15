@@ -9,7 +9,7 @@ from urllib.parse import urljoin
 # 网页网址
 
 
-url = "https://www.newera.edu.my/onlinereg/"
+url = "https://www.newera.edu.my/course_details.php?acalevel=1&course=29"
 headers = {"User-Agent": "Mozilla/5.0"}
 
 
@@ -94,7 +94,7 @@ seen = set()
 with open(text_file,"w",encoding="utf-8") as f:
 
 
-    for tag in soup.find_all(["h1","h2","h3","h4","h5","p","li"]):
+    for tag in soup.find_all(["h1","h2","h3","h4","h5","p","table","a","li"]):
         text = tag.get_text(" ",strip=True)
 
         if text and text not in seen:

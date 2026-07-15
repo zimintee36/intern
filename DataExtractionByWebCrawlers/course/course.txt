@@ -1,42 +1,208 @@
-网上报名 Online Registration
-Instructions:
-This form contains seven (7) parts, please fill out this form before submission.
-The required fields are marked in red asterisk ( ).
-Kindly please check and make sure contact informations are correct , our staff will use these information to get in touch with you.
-No amendment is allowed after you submit your application.
-Before applying, please prepare the following documents: ID card (front and back) (scanned copy) School leaving certificate (scanned copy) SPM/UEC/IGCSE results certificate (scanned copy) Bank Statement (with Letterhead)
-ID card (front and back) (scanned copy)
-School leaving certificate (scanned copy)
-SPM/UEC/IGCSE results certificate (scanned copy)
-Bank Statement (with Letterhead)
-After submitting the documents, the system will redirect you to the FPX payment page for the registration fee. The registration will only be considered successful after the payment is completed.
-注意事项：
-这个报名表格共有七大项目，请仔细填写。
-必填资料已被标上红色星号（ ）。
-我们将会使用您所提供的联络方式与您联络，请确保联络资料 正确无误 。
-表格提交后将无法再修改所提交的资料。
-报名前，请准备以下申请文件： 身份证（前页和背页）（扫描版） 离校证书（扫描版） SPM/UEC/IGCSE 成绩证书（扫描版） 银行对账单（需含银行信头）
-身份证（前页和背页）（扫描版）
-离校证书（扫描版）
-SPM/UEC/IGCSE 成绩证书（扫描版）
-银行对账单（需含银行信头）
-提交资料后，系统将跳转至报名费 FPX 转账页面。只有完成转账，报名才视为成功。
-1. 入学学期 & 资料 - Intake & Choices
-申请入学梯次 - Intake and Programme 请选择入学年份和入学梯次。 Please select intake year and intake. 入学年份与梯次 Year/Intake 2026/September Semester 2027/February Semester
-申请入学梯次 - Intake and Programme
-申请科系 - Choice of Programme 第一志愿 1 st Choice 请选择 - Click to choose 第二志愿 2 nd Choice 请选择 - Click to choose 第三志愿 3 rd Choice 请选择 - Click to choose
-申请科系 - Choice of Programme
-申请住宿 - Hostel 申请住宿 Hostel 是 Yes 否 No 宿舍房型 Hostel Type 普通房 Standard Room 升级房 Upgraded Room
-申请住宿 - Hostel
-奖贷申请 - Scholarship 奖贷申请 Scholarship 无 - None 卓越学术表现学费减免 - Excellence in Academic Performance Tuition Waiver 学优生学费减免 - Student Excellence Tuition Waiver 才艺优秀生学费减免 - Talented Student Tuition Waiver 独中校长推荐学费减免 - Chinese Independent High School Principal Recommended Student Tuition Waiver 体育生学费减免 - Sports Student Tuition Waiver 多元文化学费减免 - Multi-Cultural Tuition Waiver 国民型中学校长推荐学费减免 - SMJK Principal Recommended Student Tuition Waiver
-奖贷申请 - Scholarship
-2. 个人资料 - Personal Information
-3. 家庭资料 - Family Details
-4. 学历 - Academic Qualification
-5. 入学成绩 - Certificate & Grades
-6. 文件上传 - Documents Upload
-7. 新生调查 - New Student Survey
-为何选择新纪元大学学院/新纪元技职与推广教育学院？(任选3项) Why Choose New Era University College (NEUC)/New Era Institute of Vocational & Continuing Education (NEIVCE)? (Choose any 3) 师资 - Faculty Profile 学费/奖学金/优惠 - Tuition Fees/Scholarships/Promotions 地点优势 - Strategic Location 公共交通便捷 - Convenient Public Transportation 校内提供宿舍 - On-Campus Accomodation 校园设备 - Campus Facilities 社团活动 - Student Activities 实用教学（企业资源与链接） - Practical Teaching (Industry Collaboration & Social Engagement) 提供海外研修与实习机会 - Overseas Study & Industrial Training 有助个人未来规划 - Aligned with Career Goals 社交媒体或网络评价 - Online Contents or Social Media Reputation 教育专员专业与友善 - Friendly and Professional Education Counsellors 曾参与新纪元任何营会而留下好感 - Participated in any Campus Camp and Had Positive Impression 曾经参与新纪元讲座/工作坊而留下好感 - Participated in any Seminars Talk/Workshops and Had Positive Impression 因为想参与《起飞》专辑 - Interested in《Flying High》Album 学校未来发展可观 - Confidence on School Development 校园氛围友善、有人情味 - Friendly & Welcoming Campus Atmosphere 中文沟通环境 - Chinese-Speaking Environment 校友成就 - Alumni Achievements 其他原因 - Other Reasons
-如何认识到我们？(可复选) How Did You Get to Know Us? (Multiple Selection) 谷中城大型教育展 - Mid Valley Edu Fair 中学校内教育展 - Secondary School Edu Fair 校园开放日暨课程体验日 - Campus Open Day 校园生活营 - Campus Camp 广告宣传 - Online & Offline Advertisements 社交媒体 - 脸书 - Facebook 社交媒体 - IG - Instagram 社交媒体 - 小红书 - RedNote 社交媒体 - 抖音 - TikTok 社交媒体 - 油管 - Youtube 网站 - Website 学术讲座/工作坊 - Seminars Talk/Workshops 《起飞》音乐营/专辑 - 《Flying High》Music Camp/Album 老师推荐 - Teacher's Recommendation 朋友推荐 - Friend's Recommendation 家人/亲戚推荐 - Family/Relative's Recommendation 自主搜索 - Self-research 其他渠道 - Other Channels
-上有栏位尚未填写，请返回检查。 One or more fields are left empty. Please check again before submitting.
-若无法提交，请点击 这里 Unable to submit? Please click here
+managed/owned by New Era Edu Sdn Bhd [201401008960 (1085038-D)]
+ABOUT NEUC
+ADMISSION How to apply? Tuition Waiver & Scholarships Tuition Fees Academic e-Brochure Graduate School e-Brochure
+ADMISSION
+How to apply?
+Tuition Waiver & Scholarships
+Tuition Fees
+Academic e-Brochure
+Graduate School e-Brochure
+APPLY ONLINE Pre-University & Undergraduate Postgraduate (Coursework) Certified Intensive English Programme (CIEP)
+APPLY ONLINE
+Pre-University & Undergraduate
+Postgraduate (Coursework)
+Certified Intensive English Programme (CIEP)
+ACADEMIC & PROGRAMMES Foundation Programmes Diploma Programmes Bachelor's Degree Programmes Postgraduate Programmes Faculties & Departments Find your Course
+ACADEMIC & PROGRAMMES
+Foundation Programmes
+Diploma Programmes
+Bachelor's Degree Programmes
+Postgraduate Programmes
+Faculties & Departments
+Find your Course
+LIFE @ NEUC Accommodation & Campus Life Cultural Campus Creative Campus Vibrant Campus Artistic Campus Hostel Accommodation Campus Facilities Tan Lark Sye Library Clubs & Societies Counselling Services Career Development & Internship Career Services Internship Services Transportation
+LIFE @ NEUC
+Accommodation & Campus Life
+Cultural Campus
+Creative Campus
+Vibrant Campus
+Artistic Campus
+Hostel
+Accommodation
+Campus Facilities
+Tan Lark Sye Library
+Clubs & Societies
+Counselling Services
+Career Development & Internship
+Career Services
+Internship Services
+Transportation
+NEW ERA CULTURAL AND CREATIVE SHOP
+NEW ERA UC MEMBER
+CAREER
+Course Enquiry
+New Era Students Staff (Login) Visitor
+New Era Students
+Staff (Login)
+Visitor
+English 中文
+English
+中文
+Course Details
+Award: Bachelor of Computer Science (Hons) in Software Engineering (BSE) (R2/481/6/0727) (16/12/2025 - 15/12/2030) MQA Approval MQA/ FA5307 Duration 3 years (total up 8 semesters, incl. Industrial Training) Intakes February, May & September Total Course Fees RM 41,300 (To view complete fee structure, please click HERE ) Remark: This fee structure is applicable to Malaysian students only. Fee structure for international students please consult Institute of International Education (IIE), NEUC (E-mail: iie@newera.edu.my). Medium of Instruction English Department DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND COMPUTER SCIENCE
+HERE
+Course introduction
+Programme Modules
+minimum entry requirement
+career prospects
+Course Introduction
+The Bachelor of Computer Science (Hons) in Software Engineering programme offers a 3-year curriculum encompassing the study of programming languages, software development, algorithms, data structures, and the principles of computing, providing students with a solid foundation in Computer Science.
+This programme offers specialized tracks designed to equip students for diverse career pathways within the rapidly evolving IT sector. Students have the flexibility to choose from a range of elective tracks, including:
+Artificial Intelligence and Robotics Deepen your understanding of AI, encompassing machine learning, computer vision, robotics and embedded systems, along with their practical applications.
+Applied Generative AI Explore the innovative realm of generative AI technologies and AI-Generated Content (AIGC), learning to leverage them for creative applications across various industries.
+Internet-of-Things (IoT) Dive into the interconnected world of IoT, mastering the technologies that enable the seamless connection of devices, sensors, and data, paving the way for smart solutions and innovations.
+Big Data and Data Analytics Acquire essential skills in collecting, processing, visualizing, analyzing, and interpreting large datasets, extracting valuable insights and driving informed decision-making in diverse domains.
+Extended Reality (XR) Embark on an immersive journey into extended reality technologies, including virtual reality (VR), augmented reality (AR), and mixed reality (MR), exploring their potential applications and creating interactive experiences.
+Through this programme, students will gain both theoretical knowledge and practical skills necessary to excel in the dynamic field of Computer Science, empowering them to pursue diverse career opportunities and contribute to technological innovation.
+Partnerships:
+Programme Modules *
+Introduction to Programming
+Computer Architecture and Organization
+Networking I
+Database Systems
+System Analysis and Design
+Java Application Development
+Web Design
+Discrete Mathematics
+Operating Systems
+Python Programming
+Data Structures and Algorithms
+Web Application Development
+Software Engineering
+Mobile Application Development
+Human Computer Interaction
+Artificial Intelligence
+Information Management and Security
+Software Quality Assurance
+Industrial Training
+Final Project I
+Final Project II
+Artificial Intelligence and Robotics
+Computer Vision
+Robotics and Embedded System
+Machine Learning
+Applied Generative AI
+Introduction to Generative AI Tools
+AI Applications in Industry
+Generative AI Integration
+Internet-of-Things (IoT)
+IoT Fundamentals
+IoT Cloud and Analytics
+Big Data and Data Analytics
+Data Visualization
+Data Analysis
+Big Data Technologies and Analytics
+Extended Reality (XR)
+3D Modelling and Animation
+Virtual Reality Development
+Augmented Reality and Mixed Reality
+General Electives:
+Cloud Computing
+Research Methodology
+Minimum Entry Requirement
+STPM
+A pass in STPM (Science Stream) or its equivalent with a minimum grade of C (CGPA 2.00) in Mathematics subject and ONE (1) Science / ICT subject.
+OR
+A pass in STPM with a minimum grade of C (CGPA 2.00) in any TWO (2) subjects, AND a credit in Additional Mathematics at SPM level or its equivalent.
+* A pass in STPM with a minimum grade of C (CGPA 2.00) in any TWO (2) subjects, AND a credit in Mathematics and any one of the Science, Technology or Engineering subjects at SPM level or its equivalent.
+UEC
+Possess UEC with at least FIVE (5) credits in any subject (inclusive of Mathematics and 1 Science / ICT subject).
+Possess UEC with at least FIVE (5) credits in any subject, AND a credit in Additional Mathematics at SPM Level or its equivalent.
+* Possess UEC with at least FIVE (5) credits in any subject, AND a credit in Mathematics and any one of the Science, Technology or Engineering subjects at SPM level or its equivalent.
+Pre-U
+A pass in Matriculation or Foundation studies with minimum CGPA of 2.00, AND a credit in Additional Mathematics at SPM level or its equivalent.
+* A pass in Matriculation or Foundation studies with a minimum CGPA of 2.00, AND a credit in Mathematics and any one of the Science, Technology or Engineering subjects at SPM level or its equivalent.
+Diploma
+Diploma in Computing (Level 4, MQF) or its equivalent with a minimum CGPA of 2.50.
+Any Diploma in Science and Technology (Level 4, MQF) with a minimum CGPA of 2.75, AND a credit in Additional Mathematics at the SPM level or its equivalent.
+*Any Diploma in Science and Technology (Level 4, MQF) with a minimum CGPA of 2.75, AND a credit in Mathematics and any one of the Science, Technology, or Engineering subjects at SPM level or its equivalent.
+Remark:
+For MER that marked with *, students are required to pass the Reinforcement Mathematics before being allowed to take related core courses. The candidate can sit for any subjects that did not indicate Mathematics as a prerequisite. The Reinforcement Mathematics can be offered as part of or outside the curriculum structure.
+Students from Matriculation / Foundation or its equivalent can be exempted from taking the Reinforcement Mathematics, provided that the Mathematics offered at that programme level is equivalent / more than the Additional Mathematics offered at an SPM level.
+*For detailed information on entry requirements, please contact Marketing & Sales Department .
+Marketing & Sales Department
+Career Prospects
+Software Engineer
+Software Developer
+System Analyst
+Software Consultant
+Software Testing Engineer
+Application Support Engineer
+Java Developer
+IT Programmer
+Web Programmer
+PHP Programmer
+Web Application Designer
+Web Master
+Mobile Application Engineer
+Project Manager
+Researcher, etc.
+FIND YOUR COURSE
+Quick Access
+NEUC STUDENT
+NEUC STAFF
+CONVOCATION
+VISITORS
+address
+Blok B&C, Lot 5, Seksyen 10, Jalan Bukit, 43000 Kajang, Selangor.
+phone
+03-8210 3709 (Main Line) 03-8740 6392 (Main Line) 03-8740 4392 03-8741 8192 03-8741 4923 03-8741 4924 03-8740 6925 03-8737 9292
+email
+neuc@newera.edu.my
+OFFICE HOURS Monday to Friday: 8:30am - 5:00pm (Off on Saturday, Sunday and Public Holidays)
+news @ neuc
+e-Notice ( NEUC | NEIVCE )
+NEUC
+NEIVCE
+NEUC Academic Calendar
+NEUC Events Calendar
+Upcoming Events
+Media
+Job Opportunity
+Administration Units
+Vice-Chancellor's Office
+Registrar's Office
+Branding and Creative Department
+Computer Centre
+Counselling Centre
+General Affairs Department
+Human Resource Department
+Public Relations Department
+Student Affairs Department
+Academic Competitions
+Australian Mathematics Competition (AMC)
+Hua Luogeng Secondary School Mathematics Competition
+Tan Kah-Kee Tan Lark-Sye Young Inventors' Award
+NEUC Publication
+Journals
+Academic Series
+Xinguang Magazine
+Newsletter
+Remembering My Initial Goals, Leaping to New Heights: NEUC 25th Anniversary Commemorative Publication (1998-2023)  "Towards the pinnacle" (2019-2023)
+New Era Cutural and Creative Shop
+Research at NEUC
+Tan Lark Sye Institute
+Centre of Malaysian History
+Family Education and Teacher Development Research Centre
+quick Access
+Donate to Us
+Staff Directory
+Ng Teck Fong Chinese Language Teacher Excellent Award
+NEUC-CMEI, The Centre of Multi-Ethnic Interaction
+New Era Institute of Vocational & Continuing Education
+Institute of International Education
+Copyright © 2026 All Rights Reserved. NEW ERA UNIVERSITY COLLEGE [DKU040(B)] (managed/owned by New Era Edu Sdn Bhd [201401008960 (1085038-D)]) . Privacy Policy | Personal Data Security Policy | Policies Library
+NEW ERA UNIVERSITY COLLEGE
+Privacy Policy
+Personal Data Security Policy
+Policies Library
