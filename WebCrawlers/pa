@@ -7,9 +7,15 @@ from urllib.parse import urljoin
 
 
 # 网页网址
+#1bcs,2bse,3dcs,4dit,5fia
 
-
-url = "https://www.newera.edu.my/course_details.php?acalevel=1&course=29"
+courses = [
+    ("bcs", "https://www.newera.edu.my/course_details.php?acalevel=1&course=39"),
+    ("bse", "https://www.newera.edu.my/course_details.php?acalevel=1&course=29"),
+    ("dcs", "https://www.newera.edu.my/course_details.php?acalevel=3&course=38"),
+    ("dit", "https://www.newera.edu.my/course_details.php?acalevel=3&course=5"),
+    ("fia", "https://www.newera.edu.my/course_details.php?acalevel=2&course=49")
+]
 headers = {"User-Agent": "Mozilla/5.0"}
 
 
@@ -17,158 +23,162 @@ headers = {"User-Agent": "Mozilla/5.0"}
 
 # 请求网页
 
+for index, (course_name, url) in enumerate(courses, start=1):
 
-try:
+    print(f"\n===== 正在抓取第 {index} 個網頁 =====")
 
-    response = requests.get(url,headers=headers,timeout=30)
-    response.raise_for_status()
-    response.encoding = "utf-8"
+    try:
+        response = requests.get(url, headers=headers, timeout=30)
+        response.raise_for_status()
+        response.encoding = "utf-8"
+        soup = BeautifulSoup(response.text,"html.parser")
 
-
-except Exception as e:
-
-    print("网页连接失败:")
-    print(e)
-
-    exit()
-
-soup = BeautifulSoup(response.text,"html.parser")
-
-# 建立资料夹
-
-
-save_dir = "DataExtractionByWebCrawlers"
-course_dir = os.path.join(save_dir,"course")
-image_dir = os.path.join(save_dir,"images")
-video_dir = os.path.join(save_dir,"videos")
-
-os.makedirs(image_dir,exist_ok=True)
-os.makedirs(video_dir,exist_ok=True)
-
-failed_list = []
-
-# 通用下载函数
-
-def download_file(
-        file_url,
-        save_path,
-        retries=3
-):
-
-    for attempt in range(retries):
-
-        try:
-
-            print( f"下载尝试 {attempt+1}/{retries}")
-            print(file_url)
-            with requests.get(file_url,headers=headers,stream=True,timeout=30) as r:
-                r.raise_for_status()
-
-                with open(save_path,"wb") as f:
-                    for chunk in r.iter_content(chunk_size=1024 * 1024):
-                        if chunk:
-                            f.write(chunk)
-
-            print("成功:",save_path)
-            return True
-
-        except Exception as e:
-            print("失败:",e)
-            time.sleep(2)
-
-
-    print("放弃:",file_url)
-    failed_list.append(file_url)
-    return False
-
-
-
-# 1. 抓取文字
-
-
-course_dir = os.path.join(save_dir,"course")
-os.makedirs(course_dir,exist_ok=True)
-text_file  = os.path.join(course_dir,"course.txt")
-seen = set()
-
-with open(text_file,"w",encoding="utf-8") as f:
-
-
-    for tag in soup.find_all(["h1","h2","h3","h4","h5","p","table","a","li"]):
-        text = tag.get_text(" ",strip=True)
-
-        if text and text not in seen:
-            seen.add(text)
-            f.write(text + "\n")
-
-
-
-print("文字保存完成")
-
-
-# 2. 抓取图片
-
-image_count = 0
-
-
-
-for img in soup.find_all("img"):
-    src = img.get("src")
-
-    if not src:
+    except Exception as e:
+        print("網頁連線失敗：", e)
         continue
-
-    img_url = urljoin(url,src)
-    filename = os.path.basename(img_url.split("?")[0])
-
-
-    if not filename or "." not in filename:
-        filename = (f"image_{image_count}.jpg")
-
-    filepath = os.path.join(image_dir,filename)
-
-
-
-    if download_file(img_url,filepath):
-        image_count += 1
-
-
-
-print(f"图片完成，共 {image_count} 张")
-
-
-# 3. 抓取 HTML5 视频
-video_count = 0
-
-
-for video in soup.find_all("video"):
-    video_url = None
-
-    # <video src="">
-    if video.get("src"):
-        video_url = video.get("src")
-
-    # <source src="">
-    else:
-
-        source = video.find("source")
-        
-        if source:
-            video_url = source.get("src")
-
-    if not video_url:
-        continue
-    video_url = urljoin(url,video_url)
-    filename = os.path.basename(video_url.split("?")[0])
-
-
-    if not filename or "." not in filename:
-            filename = (f"video_{video_count}.mp4")
-    filepath = os.path.join(video_dir,filename)
     
-    if download_file(video_url,filepath):
-        video_count += 1
-print(f"影片完成，共 {video_count} 部")
+    # 建立资料夹
+
+
+    save_dir = "DataExtractionByWebCrawlers"
+
+    base_dir = os.path.join(save_dir, course_name)
+
+    course_dir = os.path.join(base_dir, "course")
+    image_dir = os.path.join(base_dir, "images")
+    video_dir = os.path.join(base_dir, "videos")
+
+    os.makedirs(course_dir, exist_ok=True)
+    os.makedirs(image_dir, exist_ok=True)
+    os.makedirs(video_dir, exist_ok=True)
+
+    failed_list = []
+
+    # 通用下载函数
+
+    def download_file(
+            file_url,
+            save_path,
+            retries=3
+    ):
+
+        for attempt in range(retries):
+
+            try:
+
+                print( f"下载尝试 {attempt+1}/{retries}")
+                print(file_url)
+                with requests.get(file_url,headers=headers,stream=True,timeout=30) as r:
+                    r.raise_for_status()
+
+                    with open(save_path,"wb") as f:
+                        for chunk in r.iter_content(chunk_size=1024 * 1024):
+                            if chunk:
+                                f.write(chunk)
+
+                print("成功:",save_path)
+                return True
+
+            except Exception as e:
+                print("失败:",e)
+                time.sleep(2)
+
+
+        print("放弃:",file_url)
+        failed_list.append(file_url)
+        return False
+
+
+
+        # 1. 抓取文字
+
+
+    text_file = os.path.join(course_dir, "course.txt")
+    seen = set()
+
+    with open(text_file,"w",encoding="utf-8") as f:
+
+
+        for tag in soup.find_all(["h1","h2","h3","h4","h5","p","table","a","li"]):
+            text = tag.get_text(" ",strip=True)
+
+            if text and text not in seen:
+                seen.add(text)
+                f.write(text + "\n")
+
+
+
+    print("文字保存完成")
+
+
+    # 2. 抓取图片
+
+    image_count = 0
+
+
+
+    for img in soup.find_all("img"):
+        src = img.get("src")
+
+        if not src:
+            continue
+
+        img_url = urljoin(url,src)
+        filename = os.path.basename(img_url.split("?")[0])
+
+
+        if not filename or "." not in filename:
+            filename = (f"image_{image_count}.jpg")
+
+        filepath = os.path.join(image_dir,filename)
+
+
+
+        if download_file(img_url,filepath):
+            image_count += 1
+
+
+
+    print(f"图片完成，共 {image_count} 张")
+
+
+    # 3. 抓取 HTML5 视频
+    video_count = 0
+
+
+    for video in soup.find_all("video"):
+        video_url = None
+
+        # <video src="">
+        if video.get("src"):
+            video_url = video.get("src")
+
+        # <source src="">
+        else:
+
+            source = video.find("source")
+        
+            if source:
+                video_url = source.get("src")
+
+        if not video_url:
+            continue
+        video_url = urljoin(url,video_url)
+        filename = os.path.basename(video_url.split("?")[0])
+
+
+        if not filename or "." not in filename:
+                filename = (f"video_{video_count}.mp4")
+        filepath = os.path.join(video_dir,filename)
+    
+        if download_file(video_url,filepath):
+            video_count += 1
+    print(f"影片完成，共 {video_count} 部")
+
+
+
+
+
 
 
 # 4. 保存失败记录
