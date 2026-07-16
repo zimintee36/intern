@@ -17,7 +17,7 @@
 <script>
 const CourseList = document.getElementById("CourseList");
 const StudentList = document.getElementById("StudentList");
-
+let currentCourse = "";
 
 const COURSE_API =
 "http://localhost:5000/course";
@@ -177,7 +177,7 @@ li.innerHTML = `
 Save
 </button>
 
-<button onclick="loadRegister()">
+<button onclick="viewStudents(currentCourse);">
 Cancel
 </button>
 <hr>
@@ -230,7 +230,7 @@ return res.json();
 })
 .then(data=>{
 alert("✅ Update Success: "+data.message);
-loadRegister();
+viewStudents(currentCourse);
 })
 
 .catch(error=>{
@@ -258,7 +258,7 @@ return res.json();
 
 .then(data=>{
 alert("✅ Delete Success: " + data.message);
-loadRegister();
+viewStudents(currentCourse);
 })
 
 .catch(error=>{
