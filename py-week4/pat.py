@@ -38,7 +38,7 @@ fcit_table = []
 
 
 # ==========================
-# 通用抓取 Tab 内容
+# 抓取 Tab 内容
 # ==========================
 
 def get_tab_content(soup, tab_name):
@@ -47,19 +47,32 @@ def get_tab_content(soup, tab_name):
 
     tab = soup.find(
         "div",
-        id=lambda x:
-        x and x.startswith(tab_name)
+        id=lambda x: x and x.startswith(tab_name)
     )
 
 
     if tab:
 
+        # 删除图片内容
+        for img in tab.find_all("img"):
+            img.decompose()
+
+
+        # 需要过滤的文字
+        remove_words = [
+            "Course Introduction",
+            "Programme Modules *",
+            "Minimum Entry Requirement",
+            "Career Prospects",
+            "Partnerships:"
+        ]
+
+
         for tag in tab.find_all(
             [
-                "p",
-                "li",
                 "h5",
-                "div"
+                "p",
+                "li"
             ]
         ):
 
@@ -69,7 +82,11 @@ def get_tab_content(soup, tab_name):
             )
 
 
-            if text and text not in data:
+            if (
+                text
+                and text not in data
+                and text not in remove_words
+            ):
 
                 data.append(text)
 
@@ -86,7 +103,6 @@ for index, (course_code, url) in enumerate(
         courses,
         start=1
 ):
-
 
     print(
         f"\n===== 抓取 {course_code} ====="
@@ -170,8 +186,7 @@ for index, (course_code, url) in enumerate(
                 "h4",
                 "h5",
                 "p",
-                "li",
-                "table"
+                "li"
             ]
         ):
 
@@ -182,15 +197,16 @@ for index, (course_code, url) in enumerate(
             )
 
 
-            if text and text not in seen:
+            if (
+                text
+                and text not in seen
+            ):
 
                 seen.add(text)
-
 
                 f.write(
                     text + "\n"
                 )
-
 
 
     print(
@@ -204,6 +220,8 @@ for index, (course_code, url) in enumerate(
     # ==========================
 
     course_details = {}
+
+    course_name = ""
 
 
     table = soup.find(
@@ -241,7 +259,14 @@ for index, (course_code, url) in enumerate(
                 )
 
 
-                course_details[key] = value
+                # Award 改成 course_name
+                if key == "Award:":
+
+                    course_name = value
+
+                else:
+
+                    course_details[key] = value
 
 
 
@@ -284,6 +309,10 @@ for index, (course_code, url) in enumerate(
 
             "course_code":
                 course_code,
+
+
+            "course_name":
+                course_name,
 
 
             "course_details":

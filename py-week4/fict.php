@@ -1,66 +1,121 @@
 <?php
 
-// 读取 JSON 文件
+// 读取 fcit_data.json
 $json_file = "fcit_data.json";
 
-if (file_exists($json_file)) {
+$json = file_get_contents($json_file);
 
-    $json_data = file_get_contents($json_file);
-
-    $courses = json_decode(
-        $json_data,
-        true
-    );
-
-} else {
-
-    $courses = [];
-
-}
+$courses = json_decode($json, true);
 
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>FCIT Courses</title>
 
-    <style>
+<meta charset="UTF-8">
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
-            padding: 30px;
-        }
+<title>FCIT Courses</title>
 
+<style>
 
-        .course {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    margin: 40px;
+}
 
 
-        h2 {
-            color: #003366;
-        }
+.course-card {
+
+    background: white;
+
+    width: 80%;
+
+    margin: 30px auto;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+}
 
 
-        p {
-            line-height: 1.6;
-        }
+.course-title {
+
+    color: #003366;
+
+    border-bottom: 3px solid #003366;
+
+    padding-bottom: 10px;
+
+}
 
 
-    </style>
+.section-title {
+
+    color: #ff6600;
+
+    margin-top: 25px;
+
+}
+
+
+.details {
+
+    background: #f0f6ff;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+}
+
+
+.details p {
+
+    margin: 8px 0;
+
+}
+
+
+.introduction p {
+
+    line-height: 1.7;
+
+    text-align: justify;
+
+}
+
+
+.label {
+
+    font-weight: bold;
+
+    color: #003366;
+
+}
+
+
+hr {
+
+    border: none;
+
+    border-top: 1px solid #ddd;
+
+    margin-top: 30px;
+
+}
+
+
+</style>
 
 </head>
 
 
 <body>
-
-
-<h1>Faculty of Computing and Information Technology Courses</h1>
 
 
 <?php
@@ -69,49 +124,85 @@ if (file_exists($json_file)) {
 foreach ($courses as $course) {
 
 
-    echo "<div class='course'>";
+    echo "<div class='course-card'>";
 
 
-    echo "<h2>";
+    // Course Name
 
-    echo htmlspecialchars(
-        $course["course_name"]
-    );
+    echo "<h2 class='course-title'>";
+    
+    echo $course["course_name"];
 
     echo "</h2>";
 
 
 
-    echo "<h3>Course Introduction</h3>";
+    // Course Details
+
+    echo "<h3 class='section-title'>";
+    
+    echo "Course Details";
+
+    echo "</h3>";
 
 
-
-    if (
-        isset(
-            $course["course_introduction"]
-        )
-    ) {
+    echo "<div class='details'>";
 
 
-        foreach (
-            $course["course_introduction"]
-            as $intro
-        ) {
+    foreach ($course["course_details"] as $key => $value) {
 
 
-            echo "<p>";
+        echo "<p>";
 
-            echo htmlspecialchars(
-                $intro
-            );
+        echo "<span class='label'>";
+        
+        echo $key;
 
-            echo "</p>";
+        echo ":</span> ";
 
+        echo $value;
 
-        }
+        echo "</p>";
 
 
     }
+
+
+    echo "</div>";
+
+
+
+    // Course Introduction
+
+    echo "<h3 class='section-title'>";
+    
+    echo "Course Introduction";
+
+    echo "</h3>";
+
+
+    echo "<div class='introduction'>";
+
+
+foreach ($course["course_introduction"] as $intro) {
+
+    // 去除不需要显示的文字
+    if (
+        $intro == "Partnerships:" ||
+        $intro == "Course Introduction"
+    ) {
+        continue;
+    }
+
+
+    echo "<p>";
+    echo $intro;
+    echo "</p>";
+
+}
+
+
+    echo "</div>";
 
 
 
