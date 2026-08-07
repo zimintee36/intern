@@ -1,0 +1,15 @@
+FCIT COURSE REPORT
+============================================================
+Total Courses: 5
+
+Course List
+1. Bachelor in Information Technology (Cyber Security) with Honours (BCS) (R/482/6/0184) (06/09/2024 - 05/09/2029)
+2. Bachelor of Computer Science (Hons) in Software Engineering (BSE) (R2/481/6/0727) (16/12/2025 - 15/12/2030)
+3. Diploma in Computer Science (DCS) (R/0613/4/0048) (06/09/2024 - 05/09/2029)
+4. Diploma in Information Technology (DIT) (R3/0611/4/0039) (23/6/2023 - 22/06/2028)
+5. Foundation in Arts (FIA) (N/0011/3/0075) (12/10/2023 - 11/10/2028)
+
+Department Summary
+DEPARTMENT OF INFORMATION TECHNOLOGY: 2
+DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND COMPUTER SCIENCE: 2
+REGISTRAR'S OFFICE: 1

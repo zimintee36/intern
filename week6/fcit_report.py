@@ -143,7 +143,7 @@ def generate_report(courses):
     # Save TXT Report
 
     with open(
-        "report.txt",
+        "c:\\xampp\\htdocs\\intern\\week6\\report.txt",
         "w",
         encoding="utf-8"
     ) as file:
