@@ -1,0 +1,159 @@
+managed/owned by New Era Edu Sdn Bhd [201401008960 (1085038-D)]
+ABOUT NEUC
+ADMISSION How to apply? Tuition Waiver & Scholarships Tuition Fees Academic e-Brochure Graduate School e-Brochure
+APPLY ONLINE Pre-University & Undergraduate Postgraduate (Coursework) Certified Intensive English Programme (CIEP)
+ACADEMIC & PROGRAMMES Foundation Programmes Diploma Programmes Bachelor's Degree Programmes Postgraduate Programmes Faculties & Departments Find your Course
+LIFE @ NEUC Accommodation & Campus Life Cultural Campus Creative Campus Vibrant Campus Artistic Campus Hostel Accommodation Campus Facilities Tan Lark Sye Library Clubs & Societies Counselling Services Career Development & Internship Career Services Internship Services Transportation
+NEW ERA CULTURAL AND CREATIVE SHOP
+NEW ERA UC MEMBER
+CAREER
+Course Enquiry
+New Era Students Staff (Login) Visitor
+English 中文
+Course Details
+Course introduction
+Programme Modules
+minimum entry requirement
+career prospects
+Course Introduction
+The Bachelor of Computer Science (Hons) in Software Engineering programme offers a 3-year curriculum encompassing the study of programming languages, software development, algorithms, data structures, and the principles of computing, providing students with a solid foundation in Computer Science.
+This programme offers specialized tracks designed to equip students for diverse career pathways within the rapidly evolving IT sector. Students have the flexibility to choose from a range of elective tracks, including:
+Artificial Intelligence and Robotics Deepen your understanding of AI, encompassing machine learning, computer vision, robotics and embedded systems, along with their practical applications.
+Applied Generative AI Explore the innovative realm of generative AI technologies and AI-Generated Content (AIGC), learning to leverage them for creative applications across various industries.
+Internet-of-Things (IoT) Dive into the interconnected world of IoT, mastering the technologies that enable the seamless connection of devices, sensors, and data, paving the way for smart solutions and innovations.
+Big Data and Data Analytics Acquire essential skills in collecting, processing, visualizing, analyzing, and interpreting large datasets, extracting valuable insights and driving informed decision-making in diverse domains.
+Extended Reality (XR) Embark on an immersive journey into extended reality technologies, including virtual reality (VR), augmented reality (AR), and mixed reality (MR), exploring their potential applications and creating interactive experiences.
+Through this programme, students will gain both theoretical knowledge and practical skills necessary to excel in the dynamic field of Computer Science, empowering them to pursue diverse career opportunities and contribute to technological innovation.
+Partnerships:
+Programme Modules *
+Introduction to Programming
+Computer Architecture and Organization
+Networking I
+Database Systems
+System Analysis and Design
+Java Application Development
+Web Design
+Discrete Mathematics
+Operating Systems
+Python Programming
+Data Structures and Algorithms
+Web Application Development
+Software Engineering
+Mobile Application Development
+Human Computer Interaction
+Artificial Intelligence
+Information Management and Security
+Software Quality Assurance
+Industrial Training
+Final Project I
+Final Project II
+Artificial Intelligence and Robotics
+Computer Vision
+Robotics and Embedded System
+Machine Learning
+Applied Generative AI
+Introduction to Generative AI Tools
+AI Applications in Industry
+Generative AI Integration
+Internet-of-Things (IoT)
+IoT Fundamentals
+IoT Cloud and Analytics
+Big Data and Data Analytics
+Data Visualization
+Data Analysis
+Big Data Technologies and Analytics
+Extended Reality (XR)
+3D Modelling and Animation
+Virtual Reality Development
+Augmented Reality and Mixed Reality
+General Electives:
+Cloud Computing
+Research Methodology
+Minimum Entry Requirement
+STPM
+A pass in STPM (Science Stream) or its equivalent with a minimum grade of C (CGPA 2.00) in Mathematics subject and ONE (1) Science / ICT subject.
+OR
+A pass in STPM with a minimum grade of C (CGPA 2.00) in any TWO (2) subjects, AND a credit in Additional Mathematics at SPM level or its equivalent.
+* A pass in STPM with a minimum grade of C (CGPA 2.00) in any TWO (2) subjects, AND a credit in Mathematics and any one of the Science, Technology or Engineering subjects at SPM level or its equivalent.
+UEC
+Possess UEC with at least FIVE (5) credits in any subject (inclusive of Mathematics and 1 Science / ICT subject).
+Possess UEC with at least FIVE (5) credits in any subject, AND a credit in Additional Mathematics at SPM Level or its equivalent.
+* Possess UEC with at least FIVE (5) credits in any subject, AND a credit in Mathematics and any one of the Science, Technology or Engineering subjects at SPM level or its equivalent.
+Pre-U
+A pass in Matriculation or Foundation studies with minimum CGPA of 2.00, AND a credit in Additional Mathematics at SPM level or its equivalent.
+* A pass in Matriculation or Foundation studies with a minimum CGPA of 2.00, AND a credit in Mathematics and any one of the Science, Technology or Engineering subjects at SPM level or its equivalent.
+Diploma
+Diploma in Computing (Level 4, MQF) or its equivalent with a minimum CGPA of 2.50.
+Any Diploma in Science and Technology (Level 4, MQF) with a minimum CGPA of 2.75, AND a credit in Additional Mathematics at the SPM level or its equivalent.
+*Any Diploma in Science and Technology (Level 4, MQF) with a minimum CGPA of 2.75, AND a credit in Mathematics and any one of the Science, Technology, or Engineering subjects at SPM level or its equivalent.
+Remark:
+For MER that marked with *, students are required to pass the Reinforcement Mathematics before being allowed to take related core courses. The candidate can sit for any subjects that did not indicate Mathematics as a prerequisite. The Reinforcement Mathematics can be offered as part of or outside the curriculum structure.
+Students from Matriculation / Foundation or its equivalent can be exempted from taking the Reinforcement Mathematics, provided that the Mathematics offered at that programme level is equivalent / more than the Additional Mathematics offered at an SPM level.
+*For detailed information on entry requirements, please contact Marketing & Sales Department .
+Career Prospects
+Software Engineer
+Software Developer
+System Analyst
+Software Consultant
+Software Testing Engineer
+Application Support Engineer
+Java Developer
+IT Programmer
+Web Programmer
+PHP Programmer
+Web Application Designer
+Web Master
+Mobile Application Engineer
+Project Manager
+Researcher, etc.
+FIND YOUR COURSE
+Quick Access
+address
+Blok B&C, Lot 5, Seksyen 10, Jalan Bukit, 43000 Kajang, Selangor.
+phone
+03-8210 3709 (Main Line) 03-8740 6392 (Main Line) 03-8740 4392 03-8741 8192 03-8741 4923 03-8741 4924 03-8740 6925 03-8737 9292
+email
+neuc@newera.edu.my
+OFFICE HOURS Monday to Friday: 8:30am - 5:00pm (Off on Saturday, Sunday and Public Holidays)
+news @ neuc
+e-Notice ( NEUC | NEIVCE )
+NEUC Academic Calendar
+NEUC Events Calendar
+Upcoming Events
+Media
+Job Opportunity
+Administration Units
+Vice-Chancellor's Office
+Registrar's Office
+Branding and Creative Department
+Computer Centre
+Counselling Centre
+General Affairs Department
+Human Resource Department
+Marketing & Sales Department
+Public Relations Department
+Tan Lark Sye Library
+Student Affairs Department
+Academic Competitions
+Australian Mathematics Competition (AMC)
+Hua Luogeng Secondary School Mathematics Competition
+Tan Kah-Kee Tan Lark-Sye Young Inventors' Award
+NEUC Publication
+Journals
+Academic Series
+Xinguang Magazine
+Newsletter
+Remembering My Initial Goals, Leaping to New Heights: NEUC 25th Anniversary Commemorative Publication (1998-2023)  "Towards the pinnacle" (2019-2023)
+New Era Cutural and Creative Shop
+Research at NEUC
+Tan Lark Sye Institute
+Centre of Malaysian History
+Family Education and Teacher Development Research Centre
+quick Access
+Donate to Us
+Staff Directory
+Ng Teck Fong Chinese Language Teacher Excellent Award
+NEUC-CMEI, The Centre of Multi-Ethnic Interaction
+New Era Institute of Vocational & Continuing Education
+Institute of International Education
+Copyright © 2026 All Rights Reserved. NEW ERA UNIVERSITY COLLEGE [DKU040(B)] (managed/owned by New Era Edu Sdn Bhd [201401008960 (1085038-D)]) . Privacy Policy | Personal Data Security Policy | Policies Library
